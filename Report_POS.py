@@ -22,3 +22,9 @@ print(conn)
 
 cursor = conn.cursor()
 cursor.execute("exec up_RE_Rpt_Assemblies 9, 28884, 0;")
+row = cursor.fetchone()
+while row:
+    print(row)
+    row = cursor.fetchone()
+    
+conn.close() 
